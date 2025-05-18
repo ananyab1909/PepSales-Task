@@ -38,8 +38,8 @@ This project is a scalable notification system designed to manage users and send
   Before the application is started, it is required that the MongoDB database is properly set up. The following steps must be completed:
   - A database named `notifications` must be created.
   - Within this database, two collections should be initialized:
-    `users` – to store user records including name, email, and phone number.
-    `messages` – to store the notification history per user (in-app messages, etc.).
+    - `users` – to store user records including name, email, and phone number.
+    - `messages` – to store the notification history per user (in-app messages, etc.).
 
  *Note: If the collections do not exist at runtime, they will be created automatically upon the insertion of the first document. However, pre-creating them is recommended for clarity and structure.*
 
