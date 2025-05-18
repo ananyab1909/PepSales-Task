@@ -177,7 +177,9 @@ This project is a scalable notification system designed to manage users and send
   4. Get user notifications
      
      - *URL:* `/users/<user_id>/notifications` (using /users/fe0e5082-d561-4b41-b4de-aed24b0d7ed1/notifications)
+       
      - *METHOD:* `GET`
+       
      - *Response:*
      ```
        [
