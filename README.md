@@ -1,4 +1,4 @@
-# Notification Service with Flask, Kafka & MongoDB
+# Notification Service 
 
 ## Description
 
