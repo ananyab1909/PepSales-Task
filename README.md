@@ -93,31 +93,31 @@ This project is a scalable notification system designed to manage users and send
    - *METHOD:* `POST`
    - *Request Body:*
    
-   TYPE I : SMS Services
-   ```
-     {
-        "type" : "sms", 
-      	"recipient" : "1236889367",
-      	"message" : "sms success" 
-      }
-   ```
-   
-   TYPE II : Email Services
-   ```
-     {
-        "type" : "email", 
-      	"recipient" : "ananya@gmail.com",
-      	"message" : "email success" 
-      }
-   ```
-   TYPE III : In-App Services
-    ```
-      {
-        "type" : "inapp", 
-      	"recipient" : "fe0e5082-d561-4b41-b4de-aed24b0d7ed1",
-      	"message" : "inapp success" 
-      }
-    ```
+     TYPE I : SMS Services
+     ```
+       {
+          "type" : "sms", 
+        	"recipient" : "1236889367",
+        	"message" : "sms success" 
+        }
+     ```
+     
+     TYPE II : Email Services
+     ```
+       {
+          "type" : "email", 
+        	"recipient" : "ananya@gmail.com",
+        	"message" : "email success" 
+        }
+     ```
+     TYPE III : In-App Services
+      ```
+        {
+          "type" : "inapp", 
+        	"recipient" : "fe0e5082-d561-4b41-b4de-aed24b0d7ed1",
+        	"message" : "inapp success" 
+        }
+      ```
 
     - *Response:*
     
@@ -146,34 +146,33 @@ This project is a scalable notification system designed to manage users and send
     
       TYPE I : SMS Services
       ```
-      Found user with ID: fe0e5082-d561-4b41-b4de-aed24b0d7ed1
-      Sending SMS to user_id=fe0e5082-d561-4b41-b4de-aed24b0d7ed1
-      Sending SMS to fe0e5082-d561-4b41-b4de-aed24b0d7ed1: sms success
-      SMS notification stored in DB.
+        Found user with ID: fe0e5082-d561-4b41-b4de-aed24b0d7ed1
+        Sending SMS to user_id=fe0e5082-d561-4b41-b4de-aed24b0d7ed1
+        Sending SMS to fe0e5082-d561-4b41-b4de-aed24b0d7ed1: sms success
+        SMS notification stored in DB.
       ```
   
       TYPE II : Email Services
       ```
-      Found user with ID: fe0e5082-d561-4b41-b4de-aed24b0d7ed1
-      Sending email to user_id=fe0e5082-d561-4b41-b4de-aed24b0d7ed1
-      Sending EMAIL to fe0e5082-d561-4b41-b4de-aed24b0d7ed1: email success     
-      Email notification stored in DB.
+        Found user with ID: fe0e5082-d561-4b41-b4de-aed24b0d7ed1
+        Sending email to user_id=fe0e5082-d561-4b41-b4de-aed24b0d7ed1
+        Sending EMAIL to fe0e5082-d561-4b41-b4de-aed24b0d7ed1: email success     
+        Email notification stored in DB.
       ```
     
       TYPE III : In-App Services
       ```
-      Found user with ID: fe0e5082-d561-4b41-b4de-aed24b0d7ed1
-      Storing in-app notification for user_id=fe0e5082-d561-4b41-b4de-aed24b0d7ed1
-      Storing IN-APP notification for fe0e5082-d561-4b41-b4de-aed24b0d7ed1: inapp success
-      In-app notification stored in DB.
+        Found user with ID: fe0e5082-d561-4b41-b4de-aed24b0d7ed1
+        Storing in-app notification for user_id=fe0e5082-d561-4b41-b4de-aed24b0d7ed1
+        Storing IN-APP notification for fe0e5082-d561-4b41-b4de-aed24b0d7ed1: inapp success
+        In-app notification stored in DB.
       ```
       
   4. Get user notifications
      
      - *URL:* `/users/<user_id>/notifications` (using /users/fe0e5082-d561-4b41-b4de-aed24b0d7ed1/notifications)
      - *METHOD:* `GET`
-  
-     *Response:*
+     - *Response:*
      ```
        [
       	  {
