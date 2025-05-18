@@ -55,7 +55,7 @@ This project is a scalable notification system designed to manage users and send
     pip install -r requirement.txt
     ```
     
-5. Set up Docker and run the project
+5. Set up Docker and run the project (The Kafka and Zookeeper Containers)
    ```
    docker-compose up --build
    ```
