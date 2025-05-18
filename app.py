@@ -1,16 +1,22 @@
 from flask import Flask, request, jsonify
 from flask_pymongo import PyMongo
 from config import MONGO_URI
-import uuid
+import uuid,json
 from models.mongo import mongo
 from services.email_service import send_email
 from services.sms_service import send_sms
 from services.inapp_service import store_in_app
+from kafka import KafkaProducer
 
 app = Flask(__name__)
+app.app_context().push()
 app.config["MONGO_URI"] = MONGO_URI
-print("Using MONGO_URI:", MONGO_URI)
 mongo.init_app(app)
+
+producer = KafkaProducer(
+    bootstrap_servers='localhost:9092',
+    value_serializer=lambda v: json.dumps(v).encode('utf-8')
+)
 
 @app.route("/users", methods=["POST"])
 def create_user():
@@ -57,23 +63,24 @@ def send_notification():
     if not user:
         return jsonify({"error": "Recipient not found"}), 404
 
-    user_id = user["_id"]
+    notification_payload = {
+        "type": msg_type,
+        "recipient": recipient,
+        "message": message
+    }
 
-    if msg_type == "email":
-        send_email(user_id, message)
-    elif msg_type == "sms":
-        send_sms(user_id, message)
-    elif msg_type == "inapp":
-        store_in_app(user_id, message)
+    producer.send("messages", notification_payload)
+    producer.flush()
 
-    return jsonify({"status": f"{msg_type} notification sent"}), 200
+    return jsonify({"status": f"{msg_type} notification queued"}), 200
+
 
 @app.route("/users/<user_id>/notifications", methods=["GET"])
 def get_user_notifications(user_id):
     if not mongo.db.users.find_one({"_id": user_id}):
         return jsonify({"error": "User not found"}), 404
 
-    notifications = mongo.db.notifications.find({"user_id": user_id})
+    notifications = mongo.db.messages.find({"user_id": user_id})
     return jsonify([{
         "type": n["type"],
         "message": n["message"]
