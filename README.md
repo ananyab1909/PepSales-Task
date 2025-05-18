@@ -45,9 +45,9 @@ This project is a scalable notification system designed to manage users and send
    ```
 
 5. Create environment config for Flask - Inside the root directory, create a .env file or edit your config.py file to include:
-  ```
+    ```
     MONGO_URI = "your_mongodb_connection_string"
-  ```
+    ```
 
 7. Set up Docker and run the project
    ```
@@ -55,14 +55,14 @@ This project is a scalable notification system designed to manage users and send
    ```
 
 9. Access the API
-   ```
-   python app.py
-   ```
+     ```
+     python app.py
+     ```
 
 11. Access the Kafka Consumer
-   ```
-   python worker.py
-   ```
+     ```
+     python worker.py
+     ```
 
 ## User Routes
 
