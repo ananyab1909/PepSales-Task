@@ -36,12 +36,12 @@ This project is a scalable notification system designed to manage users and send
 
 1. Clone the repository
    ```
-   git clone https://github.com/ananyab1909/Zynetic-Backend.git
+   https://github.com/ananyab1909/PepSales-Task.git
    ```
 
 3. Enter into the directory
    ```
-   cd Zynetic-Backend
+   cd PepSales-Task
    ```
 
 5. Create environment config for Flask - Inside the root directory, create a .env file or edit your config.py file to include:
