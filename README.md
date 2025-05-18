@@ -189,3 +189,13 @@ This project is a scalable notification system designed to manage users and send
       	}
       ]
      ```
+## About Me
+
+Hello, my name is Ananya Biswas. I am an Engineering Student at [Kalinga Institute of Industrial Technology](https://kiit.ac.in/). I enjoy making projects and now that my this project is over, I am open-sourcing the project. Hope you like it! Lastly, I would like to put it out there that I have worked on other projects that you may like. You can check them out at my [Github](https://github.com/ananyab1909/). Give it a whirl and let me know your thoughts.
+
+## Socials
+  - Portfolio : https://dub.sh/ananyabiswas
+  - LinkedIn : https://linkedin.com/in/ananya-biswas-kiit/
+  - Mastodon : https://mastodon.social/@captain_obvious/
+  - Twitter : https://x.com/not_average_x/
+  - Github : https://github.com/ananyab1909/
