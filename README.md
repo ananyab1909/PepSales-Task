@@ -17,6 +17,7 @@ This project is a scalable notification system designed to manage users and send
   - User Management: Create users with unique emails and phone numbers.
   - Notification Sending: Queue notifications (email, SMS, in-app) via Kafka.
   - Notification Processing: Worker consumes Kafka messages and dispatches notifications.
+  - Retry Mechanism: Uses tenacity to retry failed notifications for better reliability.
   - Notification History: Retrieve past notifications per user from MongoDB.
 
 ## Technologies used
