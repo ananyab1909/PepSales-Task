@@ -44,10 +44,9 @@ This project is a scalable notification system designed to manage users and send
    cd Zynetic-Backend
    ```
 
-5. Create environment config for Flask
-   Inside the root directory, create a .env file or edit your config.py file to include:
+5. Create environment config for Flask - Inside the root directory, create a .env file or edit your config.py file to include:
   ```
-  MONGO_URI = "your_mongodb_connection_string"
+    MONGO_URI = "your_mongodb_connection_string"
   ```
 
 7. Set up Docker and run the project
@@ -69,9 +68,9 @@ This project is a scalable notification system designed to manage users and send
 
 1. Register the USER -
    
-   *URL:* `/users`
-   *Method:* `POST`
-   *Request Body:*
+   - *URL:* `/users`
+   - *Method:* `POST`
+   - *Request Body:*
    
      ```
      {
@@ -80,7 +79,7 @@ This project is a scalable notification system designed to manage users and send
       	"phone" : "1236889367" 
       }
      ```
-   *Response:*
+   - *Response:*
    ```
    {
     	"message": "User created",
@@ -90,9 +89,9 @@ This project is a scalable notification system designed to manage users and send
 
 3. Send Notifications
 
-   *URL:* `/notificationns`
-   *METHOD:* `POST`
-   *Request Body:*
+   - *URL:* `/notifications`
+   - *METHOD:* `POST`
+   - *Request Body:*
    
    TYPE I : SMS Services
    ```
@@ -120,58 +119,59 @@ This project is a scalable notification system designed to manage users and send
     }
     ```
 
-    *Response:*
+    - *Response:*
     
-    TYPE I : SMS Services
-    ```
-    {
-    	"status": "sms notification queued"
-    }
-    ```
+      TYPE I : SMS Services
+      ```
+      {
+      	"status": "sms notification queued"
+      }
+      ```
+      
+      TYPE II : Email Services
+      ```
+      {
+      	"status": "email notification queued"
+      }
+      ```
     
-    TYPE II : Email Services
-    ```
-    {
-    	"status": "email notification queued"
-    }
-    ```
+      TYPE III : In-App Services
+      ```
+      {
+      	"status": "inapp notification queued"
+      }
+      ```
   
-    TYPE III : In-App Services
-    ```
-    {
-    	"status": "inapp notification queued"
-    }
-    ```
-  
-    *Queue response:*
+    - *Queue responses:*
     
-    TYPE I : SMS Services
-    ```
-    Found user with ID: fe0e5082-d561-4b41-b4de-aed24b0d7ed1
-    Sending SMS to user_id=fe0e5082-d561-4b41-b4de-aed24b0d7ed1
-    Sending SMS to fe0e5082-d561-4b41-b4de-aed24b0d7ed1: sms success
-    SMS notification stored in DB.
-    ```
-
-    TYPE II : Email Services
-    ```
-    Found user with ID: fe0e5082-d561-4b41-b4de-aed24b0d7ed1
-    Sending email to user_id=fe0e5082-d561-4b41-b4de-aed24b0d7ed1
-    Sending EMAIL to fe0e5082-d561-4b41-b4de-aed24b0d7ed1: email success     
-    Email notification stored in DB.
-    ```
+      TYPE I : SMS Services
+      ```
+      Found user with ID: fe0e5082-d561-4b41-b4de-aed24b0d7ed1
+      Sending SMS to user_id=fe0e5082-d561-4b41-b4de-aed24b0d7ed1
+      Sending SMS to fe0e5082-d561-4b41-b4de-aed24b0d7ed1: sms success
+      SMS notification stored in DB.
+      ```
   
-    TYPE III : In-App Services
-    ```
-    Found user with ID: fe0e5082-d561-4b41-b4de-aed24b0d7ed1
-    Storing in-app notification for user_id=fe0e5082-d561-4b41-b4de-aed24b0d7ed1
-    Storing IN-APP notification for fe0e5082-d561-4b41-b4de-aed24b0d7ed1: inapp success
-    In-app notification stored in DB.
-    ```
+      TYPE II : Email Services
+      ```
+      Found user with ID: fe0e5082-d561-4b41-b4de-aed24b0d7ed1
+      Sending email to user_id=fe0e5082-d561-4b41-b4de-aed24b0d7ed1
+      Sending EMAIL to fe0e5082-d561-4b41-b4de-aed24b0d7ed1: email success     
+      Email notification stored in DB.
+      ```
+    
+      TYPE III : In-App Services
+      ```
+      Found user with ID: fe0e5082-d561-4b41-b4de-aed24b0d7ed1
+      Storing in-app notification for user_id=fe0e5082-d561-4b41-b4de-aed24b0d7ed1
+      Storing IN-APP notification for fe0e5082-d561-4b41-b4de-aed24b0d7ed1: inapp success
+      In-app notification stored in DB.
+      ```
+      
   4. Get user notifications
      
-     *URL:* `/users/<user_id>/notifications` (using /users/fe0e5082-d561-4b41-b4de-aed24b0d7ed1/notifications)
-     *METHOD:* `GET`
+     - *URL:* `/users/<user_id>/notifications` (using /users/fe0e5082-d561-4b41-b4de-aed24b0d7ed1/notifications)
+     - *METHOD:* `GET`
   
      *Response:*
      ```
