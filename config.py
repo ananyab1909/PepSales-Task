@@ -1,9 +1,8 @@
 import os
 from dotenv import load_dotenv
 
-load_dotenv()  # loads variables from .env
+load_dotenv()  
 
-# Fetch MONGO_URI from env var or fallback to hardcoded string
 MONGO_URI = os.getenv(
     "MONGO_URI"
 )
