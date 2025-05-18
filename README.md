@@ -46,29 +46,29 @@ This project is a scalable notification system designed to manage users and send
 ## Implementation
 
 1. Clone the repository
-   ```
-   https://github.com/ananyab1909/PepSales-Task.git
-   ```
+     ```
+     https://github.com/ananyab1909/PepSales-Task.git
+     ```
 
 2. Enter into the directory
-   ```
-   cd PepSales-Task
-   ```
+     ```
+     cd PepSales-Task
+     ```
 
 3. Create environment config for Flask - Inside the root directory, create a .env file or edit your config.py file to include:
-    ```
-    MONGO_URI = "your_mongodb_connection_string"
-    ```
+      ```
+      MONGO_URI = "your_mongodb_connection_string"
+      ```
     
 4. Install the required dependencies 
     ```
-    pip install -r requirement.txt
+      pip install -r requirement.txt
     ```
     
 5. Set up Docker and run the project (The Kafka and Zookeeper Containers)
-   ```
-   docker-compose up --build
-   ```
+     ```
+     docker-compose up --build
+     ```
 
 6. Access the API
      ```
@@ -81,9 +81,9 @@ This project is a scalable notification system designed to manage users and send
      ```
      
 8. Stop the Kafka Containers after using
-   ```
+     ```
      docker-compose down
-   ```
+     ```
 
 ## User Routes
 
