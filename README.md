@@ -75,16 +75,16 @@ This project is a scalable notification system designed to manage users and send
    
      ```
      {
-        "name" : "ananya", 
-      	"email" : "ananya@gmail.com",
-      	"phone" : "1236889367" 
+         "name" : "ananya",
+         "email" : "ananya@gmail.com",
+         "phone" : "1236889367" 
       }
      ```
    - *Response:*
      ```
      {
-      	"message": "User created",
-      	"user_id": "fe0e5082-d561-4b41-b4de-aed24b0d7ed1"
+         "message": "User created",
+         "user_id": "fe0e5082-d561-4b41-b4de-aed24b0d7ed1"
       }
      ```
 
@@ -97,26 +97,26 @@ This project is a scalable notification system designed to manage users and send
      TYPE I : SMS Services
      ```
        {
-          "type" : "sms", 
-        	"recipient" : "1236889367",
-        	"message" : "sms success" 
+           "type" : "sms",
+           "recipient" : "1236889367",
+           "message" : "sms success" 
         }
      ```
      
      TYPE II : Email Services
      ```
        {
-          "type" : "email", 
-        	"recipient" : "ananya@gmail.com",
-        	"message" : "email success" 
+           "type" : "email",
+           "recipient" : "ananya@gmail.com",
+           "message" : "email success" 
         }
      ```
      TYPE III : In-App Services
       ```
         {
-          "type" : "inapp", 
-        	"recipient" : "fe0e5082-d561-4b41-b4de-aed24b0d7ed1",
-        	"message" : "inapp success" 
+            "type" : "inapp",
+            "recipient" : "fe0e5082-d561-4b41-b4de-aed24b0d7ed1",
+            "message" : "inapp success" 
         }
       ```
 
@@ -125,21 +125,22 @@ This project is a scalable notification system designed to manage users and send
       TYPE I : SMS Services
       ```
         {
-        	"status": "sms notification queued"
+            "status": "sms notification queued"
         }
       ```
       
       TYPE II : Email Services
       ```
         {
-        	"status": "email notification queued"
+            "status": "email notification queued"
         }
       ```
     
       TYPE III : In-App Services
       ```
         {
-        	"status": "inapp notification queued"
+
+      "status": "inapp notification queued"
         }
       ```
   
