@@ -35,23 +35,35 @@ This project is a scalable notification system designed to manage users and send
 ## Implementation
 
 1. Clone the repository
-   `git clone https://github.com/ananyab1909/Zynetic-Backend.git`
+   ```
+   git clone https://github.com/ananyab1909/Zynetic-Backend.git
+   ```
 
-2. Enter into the directory
-   `cd Zynetic-Backend`
+3. Enter into the directory
+   ```
+   cd Zynetic-Backend
+   ```
 
-3. Create environment config for Flask
+5. Create environment config for Flask
    Inside the root directory, create a .env file or edit your config.py file to include:
-  `MONGO_URI = "your_mongodb_connection_string"`
+  ```
+  MONGO_URI = "your_mongodb_connection_string"
+  ```
 
-4. Set up Docker and run the project
-   `docker-compose up --build`
+7. Set up Docker and run the project
+   ```
+   docker-compose up --build
+   ```
 
-5. Access the API
-   `python app.py`
+9. Access the API
+   ```
+   python app.py
+   ```
 
-6. Access the Kafka Consumer
-   `python worker.py`
+11. Access the Kafka Consumer
+   ```
+   python worker.py
+   ```
 
 ## User Routes
 
@@ -60,18 +72,23 @@ This project is a scalable notification system designed to manage users and send
    *URL:* `/users`
    *Method:* `POST`
    *Request Body:*
-     `{
+   
+     ```
+     {
         "name" : "ananya", 
       	"email" : "ananya@gmail.com",
       	"phone" : "1236889367" 
-      }`
+      }
+     ```
    *Response:*
-   `{
+   ```
+   {
     	"message": "User created",
     	"user_id": "fe0e5082-d561-4b41-b4de-aed24b0d7ed1"
-    }`
+    }
+   ```
 
-2. Send Notifications
+3. Send Notifications
 
    *URL:* `/notificationns`
    *METHOD:* `POST`
@@ -94,83 +111,82 @@ This project is a scalable notification system designed to manage users and send
     	"message" : "email success" 
     }
    ```
-   
-  TYPE III : In-App Services
-  ```
-  {
-    "type" : "inapp", 
-  	"recipient" : "fe0e5082-d561-4b41-b4de-aed24b0d7ed1",
-  	"message" : "inapp success" 
-  }
-  ```
+   TYPE III : In-App Services
+    ```
+    {
+      "type" : "inapp", 
+    	"recipient" : "fe0e5082-d561-4b41-b4de-aed24b0d7ed1",
+    	"message" : "inapp success" 
+    }
+    ```
 
-  *Response:*
+    *Response:*
+    
+    TYPE I : SMS Services
+    ```
+    {
+    	"status": "sms notification queued"
+    }
+    ```
+    
+    TYPE II : Email Services
+    ```
+    {
+    	"status": "email notification queued"
+    }
+    ```
   
-  TYPE I : SMS Services
-  ```
-  {
-  	"status": "sms notification queued"
-  }
-  ```
+    TYPE III : In-App Services
+    ```
+    {
+    	"status": "inapp notification queued"
+    }
+    ```
   
-  TYPE II : Email Services
-  ```
-  {
-  	"status": "email notification queued"
-  }
-  ```
+    *Queue response:*
+    
+    TYPE I : SMS Services
+    ```
+    Found user with ID: fe0e5082-d561-4b41-b4de-aed24b0d7ed1
+    Sending SMS to user_id=fe0e5082-d561-4b41-b4de-aed24b0d7ed1
+    Sending SMS to fe0e5082-d561-4b41-b4de-aed24b0d7ed1: sms success
+    SMS notification stored in DB.
+    ```
+
+    TYPE II : Email Services
+    ```
+    Found user with ID: fe0e5082-d561-4b41-b4de-aed24b0d7ed1
+    Sending email to user_id=fe0e5082-d561-4b41-b4de-aed24b0d7ed1
+    Sending EMAIL to fe0e5082-d561-4b41-b4de-aed24b0d7ed1: email success     
+    Email notification stored in DB.
+    ```
   
-  TYPE III : In-App Services
-  ```
-  {
-  	"status": "inapp notification queued"
-  }
-  ```
-
-  *Queue response:*
+    TYPE III : In-App Services
+    ```
+    Found user with ID: fe0e5082-d561-4b41-b4de-aed24b0d7ed1
+    Storing in-app notification for user_id=fe0e5082-d561-4b41-b4de-aed24b0d7ed1
+    Storing IN-APP notification for fe0e5082-d561-4b41-b4de-aed24b0d7ed1: inapp success
+    In-app notification stored in DB.
+    ```
+  4. Get user notifications
+     
+     *URL:* `/users/<user_id>/notifications` (using /users/fe0e5082-d561-4b41-b4de-aed24b0d7ed1/notifications)
+     *METHOD:* `GET`
   
-  TYPE I : SMS Services
-  ```
-  Found user with ID: fe0e5082-d561-4b41-b4de-aed24b0d7ed1
-  Sending SMS to user_id=fe0e5082-d561-4b41-b4de-aed24b0d7ed1
-  Sending SMS to fe0e5082-d561-4b41-b4de-aed24b0d7ed1: sms success
-  SMS notification stored in DB.
-  ```
-
-  TYPE II : Email Services
-  ```
-  Found user with ID: fe0e5082-d561-4b41-b4de-aed24b0d7ed1
-  Sending email to user_id=fe0e5082-d561-4b41-b4de-aed24b0d7ed1
-  Sending EMAIL to fe0e5082-d561-4b41-b4de-aed24b0d7ed1: email success     
-  Email notification stored in DB.
-  ```
-
-  TYPE III : In-App Services
-  ```
-  Found user with ID: fe0e5082-d561-4b41-b4de-aed24b0d7ed1
-  Storing in-app notification for user_id=fe0e5082-d561-4b41-b4de-aed24b0d7ed1
-  Storing IN-APP notification for fe0e5082-d561-4b41-b4de-aed24b0d7ed1: inapp success
-  In-app notification stored in DB.
-  ```
-3. Get user notifications
-   
-   *URL:* `/users/<user_id>/notifications` (using /users/fe0e5082-d561-4b41-b4de-aed24b0d7ed1/notifications)
-   *METHOD:* `GET`
-
-   *Response:*
-   ```
-     [
-    	{
-    		"type": "inapp",
-    		"message": "inapp success"
-    	},
-    	{
-    		"type": "email",
-    		"message": "email success"
-    	},
-    	{
-    		"type": "sms",
-    		"message": "sms success"
-    	}
-    ]
-   ```
+     *Response:*
+     ```
+       [
+      	  {
+        		"type": "inapp",
+        		"message": "inapp success"
+        	},
+        	{
+      		"type": "email",
+      		"message": "email success"
+      	},
+      	{
+      		"type": "sms",
+      		"message": "sms success"
+      	}
+      ]
+     ```
