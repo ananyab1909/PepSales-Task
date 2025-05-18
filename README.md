@@ -139,8 +139,7 @@ This project is a scalable notification system designed to manage users and send
       TYPE III : In-App Services
       ```
         {
-
-      "status": "inapp notification queued"
+            "status": "inapp notification queued"
         }
       ```
   
