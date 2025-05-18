@@ -78,11 +78,11 @@ This project is a scalable notification system designed to manage users and send
    *Request Body:*
    
    TYPE I : SMS Services
-   `{
+   ```{
       "type" : "sms", 
     	"recipient" : "1236889367",
     	"message" : "sms success" 
-    }`
+    }```
    
    TYPE II : Email Services
    `{
