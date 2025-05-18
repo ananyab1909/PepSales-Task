@@ -79,6 +79,11 @@ This project is a scalable notification system designed to manage users and send
      ```
      python worker.py
      ```
+     
+8. Stop the Kafka Containers after using
+   ```
+     docker-compose down
+   ```
 
 ## User Routes
 
