@@ -40,27 +40,32 @@ This project is a scalable notification system designed to manage users and send
    https://github.com/ananyab1909/PepSales-Task.git
    ```
 
-3. Enter into the directory
+2. Enter into the directory
    ```
    cd PepSales-Task
    ```
 
-5. Create environment config for Flask - Inside the root directory, create a .env file or edit your config.py file to include:
+3. Create environment config for Flask - Inside the root directory, create a .env file or edit your config.py file to include:
     ```
     MONGO_URI = "your_mongodb_connection_string"
     ```
-
-7. Set up Docker and run the project
+    
+4. Install the required dependencies 
+    ```
+    pip install -r requirement.txt
+    ```
+    
+5. Set up Docker and run the project
    ```
    docker-compose up --build
    ```
 
-9. Access the API
+6. Access the API
      ```
      python app.py
      ```
 
-11. Access the Kafka Consumer
+7. Access the Kafka Consumer
      ```
      python worker.py
      ```
